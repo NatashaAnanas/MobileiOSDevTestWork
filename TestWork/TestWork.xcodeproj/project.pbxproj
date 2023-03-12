@@ -9,21 +9,37 @@
 /* Begin PBXBuildFile section */
 		417E759529B79EDE003F62A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417E759429B79EDE003F62A4 /* AppDelegate.swift */; };
 		417E759729B79EDE003F62A4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417E759629B79EDE003F62A4 /* SceneDelegate.swift */; };
-		417E759929B79EDE003F62A4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417E759829B79EDE003F62A4 /* ViewController.swift */; };
+		417E759929B79EDE003F62A4 /* TransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417E759829B79EDE003F62A4 /* TransactionViewController.swift */; };
 		417E759C29B79EDE003F62A4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 417E759A29B79EDE003F62A4 /* Main.storyboard */; };
 		417E759E29B79EE1003F62A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 417E759D29B79EE1003F62A4 /* Assets.xcassets */; };
 		417E75A129B79EE1003F62A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 417E759F29B79EE1003F62A4 /* LaunchScreen.storyboard */; };
+		417E75A929B7A319003F62A4 /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417E75A829B7A319003F62A4 /* Server.swift */; };
+		417E75AD29B7A4F0003F62A4 /* DealCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417E75AC29B7A4F0003F62A4 /* DealCell.swift */; };
+		417E75B129B86E65003F62A4 /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417E75B029B86E65003F62A4 /* HeaderCell.swift */; };
+		4185E21E29BD212400835AF5 /* Deal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4185E21D29BD212400835AF5 /* Deal.swift */; };
+		4185E22029BDE4D400835AF5 /* TransactionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4185E21F29BDE4D400835AF5 /* TransactionPresenter.swift */; };
+		4185E22229BDECDF00835AF5 /* TransactionPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4185E22129BDECDF00835AF5 /* TransactionPresenterProtocol.swift */; };
+		4185E22429BDEDC600835AF5 /* TransactionViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4185E22329BDEDC600835AF5 /* TransactionViewProtocol.swift */; };
+		4185E22629BDEE6000835AF5 /* Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4185E22529BDEE6000835AF5 /* Builder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		417E759129B79EDE003F62A4 /* TestWork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestWork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		417E759429B79EDE003F62A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		417E759629B79EDE003F62A4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		417E759829B79EDE003F62A4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		417E759829B79EDE003F62A4 /* TransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionViewController.swift; sourceTree = "<group>"; };
 		417E759B29B79EDE003F62A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		417E759D29B79EE1003F62A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		417E75A029B79EE1003F62A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		417E75A229B79EE1003F62A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		417E75A829B7A319003F62A4 /* Server.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
+		417E75AC29B7A4F0003F62A4 /* DealCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealCell.swift; sourceTree = "<group>"; };
+		417E75B029B86E65003F62A4 /* HeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
+		4185E21D29BD212400835AF5 /* Deal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deal.swift; sourceTree = "<group>"; };
+		4185E21F29BDE4D400835AF5 /* TransactionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionPresenter.swift; sourceTree = "<group>"; };
+		4185E22129BDECDF00835AF5 /* TransactionPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionPresenterProtocol.swift; sourceTree = "<group>"; };
+		4185E22329BDEDC600835AF5 /* TransactionViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionViewProtocol.swift; sourceTree = "<group>"; };
+		4185E22529BDEE6000835AF5 /* Builder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Builder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +72,71 @@
 		417E759329B79EDE003F62A4 /* TestWork */ = {
 			isa = PBXGroup;
 			children = (
+				4185E22729BDEE6900835AF5 /* Builder */,
+				4185E21C29BD20E200835AF5 /* Server */,
+				4185E21B29BD20B100835AF5 /* Presenter */,
+				4185E21A29BD209400835AF5 /* View */,
+				4185E21929BD208700835AF5 /* Model */,
 				417E759429B79EDE003F62A4 /* AppDelegate.swift */,
 				417E759629B79EDE003F62A4 /* SceneDelegate.swift */,
-				417E759829B79EDE003F62A4 /* ViewController.swift */,
 				417E759A29B79EDE003F62A4 /* Main.storyboard */,
 				417E759D29B79EE1003F62A4 /* Assets.xcassets */,
 				417E759F29B79EE1003F62A4 /* LaunchScreen.storyboard */,
 				417E75A229B79EE1003F62A4 /* Info.plist */,
 			);
 			path = TestWork;
+			sourceTree = "<group>";
+		};
+		417E75AA29B7A49D003F62A4 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				417E75AC29B7A4F0003F62A4 /* DealCell.swift */,
+				417E75B029B86E65003F62A4 /* HeaderCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		4185E21929BD208700835AF5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4185E21D29BD212400835AF5 /* Deal.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4185E21A29BD209400835AF5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				417E759829B79EDE003F62A4 /* TransactionViewController.swift */,
+				4185E22329BDEDC600835AF5 /* TransactionViewProtocol.swift */,
+				417E75AA29B7A49D003F62A4 /* Cell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4185E21B29BD20B100835AF5 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				4185E21F29BDE4D400835AF5 /* TransactionPresenter.swift */,
+				4185E22129BDECDF00835AF5 /* TransactionPresenterProtocol.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		4185E21C29BD20E200835AF5 /* Server */ = {
+			isa = PBXGroup;
+			children = (
+				417E75A829B7A319003F62A4 /* Server.swift */,
+			);
+			path = Server;
+			sourceTree = "<group>";
+		};
+		4185E22729BDEE6900835AF5 /* Builder */ = {
+			isa = PBXGroup;
+			children = (
+				4185E22529BDEE6000835AF5 /* Builder.swift */,
+			);
+			path = Builder;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +210,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				417E759929B79EDE003F62A4 /* ViewController.swift in Sources */,
+				417E75AD29B7A4F0003F62A4 /* DealCell.swift in Sources */,
+				417E759929B79EDE003F62A4 /* TransactionViewController.swift in Sources */,
 				417E759529B79EDE003F62A4 /* AppDelegate.swift in Sources */,
+				4185E22629BDEE6000835AF5 /* Builder.swift in Sources */,
+				4185E22029BDE4D400835AF5 /* TransactionPresenter.swift in Sources */,
+				417E75A929B7A319003F62A4 /* Server.swift in Sources */,
+				4185E22429BDEDC600835AF5 /* TransactionViewProtocol.swift in Sources */,
+				417E75B129B86E65003F62A4 /* HeaderCell.swift in Sources */,
 				417E759729B79EDE003F62A4 /* SceneDelegate.swift in Sources */,
+				4185E21E29BD212400835AF5 /* Deal.swift in Sources */,
+				4185E22229BDECDF00835AF5 /* TransactionPresenterProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
