@@ -13,7 +13,7 @@ final class DealCell: UITableViewCell {
     // MARK: - Private Constants
     
     private enum Constants {
-        static let sideText = "side"
+        static let sellText = "sell"
         static let buyText = "buy"
         static let formatTwo = "%.2f"
         static let formatZero = "%.0f"
@@ -101,7 +101,7 @@ final class DealCell: UITableViewCell {
     private func createSide(side: Deal.Side) {
         switch side {
         case .sell:
-            sideLabel.text = Constants.sideText
+            sideLabel.text = Constants.sellText
             sideLabel.textColor = .red
             priceLabel.textColor = .red
         case .buy:
