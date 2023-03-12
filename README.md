@@ -13,5 +13,9 @@
 При скроле списка он не должен тормозить.
 Проект должен быть выполнен в git-репозитории, на который необходимо предоставить ссылку.
 Делать изменения в классе Server нельзя. Необходимо строить решение, подразумевая, что в любой момент времени может прилететь новая пачка со сделками.
-![Simulator Screen Shot - iPhone 14 - 2023-03-12 at 19 04 28](https://user-images.githubusercontent.com/110349901/224557105-b3c3ed5e-b52d-4aae-bb81-f3a20e6f5980.png)
+
+Сортировка по дате:
 ![Simulator Screen Shot - iPhone 14 - 2023-03-12 at 19 04 16](https://user-images.githubusercontent.com/110349901/224557110-ddf75f37-5c83-47db-9e20-74837194c8af.png)
+
+Сортировка по цене:
+![Simulator Screen Shot - iPhone 14 - 2023-03-12 at 19 04 28](https://user-images.githubusercontent.com/110349901/224557105-b3c3ed5e-b52d-4aae-bb81-f3a20e6f5980.png)
