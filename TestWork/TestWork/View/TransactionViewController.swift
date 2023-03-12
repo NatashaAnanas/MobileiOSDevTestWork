@@ -183,7 +183,6 @@ extension TransactionViewController: TransactionViewProtocol {
     }
 }
 
-
 // MARK: - UITableViewDataSource, UITableViewDelegate
 
 extension TransactionViewController: UITableViewDataSource, UITableViewDelegate {
