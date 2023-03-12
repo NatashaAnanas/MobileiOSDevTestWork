@@ -70,12 +70,16 @@ final class HeaderCell: UITableViewHeaderFooterView {
         fatalError(Constants.fatalErrorText)
     }
     
+    // MARK: - Public Methods
+    
     func configure() {
         instrumentNameTitlLabel.text = Constants.instrumentText
         priceTitleLabel.text = Constants.priceText
         amountTitleLabel.text = Constants.amountText
         sideTitleLabel.text = Constants.sideText
     }
+    
+    // MARK: - Private Methods
     
     private func setupUI() {
         addSubview(instrumentNameTitlLabel)
