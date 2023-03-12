@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Сервер
 final class Server {
     let queue = DispatchQueue(label: "DealsMakeQueue")
   let instrumentNames = [

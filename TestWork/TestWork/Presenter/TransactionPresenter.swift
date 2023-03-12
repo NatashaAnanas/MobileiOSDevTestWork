@@ -7,36 +7,30 @@
 
 import Foundation
 
+/// Презентер экрана со сделками
 final class TransactionPresenter: TransactionPresenterProtocol {
     
-//     enum FieldSorted {
-//        case date
-//        case instrument
-//        case price
-//        case amount
-//        case side
-//    }
-//    
-//     enum Order {
-//        case ascending
-//        case descending
-//    }
+    // MARK: - Public Properties
     
     weak var view: TransactionViewProtocol?
-    
     var server: Server?
-    
     var model: [Deal] = []
     
-    var sortField: FieldSorted = .date {
+    // MARK: - Private Properties
+    
+    private var sortField: FieldSorted = .date {
         didSet {
             self.view?.reloadTableView()
         }
     }
     
+    // MARK: - Initializers
+    
     init(server: Server?) {
         self.server = server
     }
+    
+    // MARK: - Public Methods
     
     func getServerData() {
         server?.subscribeToDeals { [weak self] deals in

@@ -9,9 +9,9 @@ import Foundation
 
 /// Информация о сделке
 struct Deal {
-    /// Идентификатор сделки
+    /// Уникальный номер сделки
     let id: Int64
-    /// Дата изменения сделки
+    /// Дата последнего изменения сделки
     let dateModifier: Date
     /// Имя инструмента
     let instrumentName: String

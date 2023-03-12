@@ -5,24 +5,12 @@
 //  Created by Анастасия Козлова on 07.03.2023.
 //
 
-//Реализовать экран с таблицей сделок.
-
-//Реализуй сортировку таблицы по следующим полям:
-
-//“дата изменения сделки“,
-//“имя инструмента”,
-//“цена сделки”,
-//“объем сделки”
-//и “сторона сделки”.
-//При этом по умолчанию отсортируй таблицу по полю “дата изменения сделки“.
-//Так же реализуй интерфейс изменения направления сортровки.
-
-//Приходящие сделки перед отображением сортируй согласно выбранным параметрам сортировки.
-
-
 import UIKit
 
+/// Экран со сделками
 final class TransactionViewController: UIViewController {
+    
+    // MARK: - Private Constants
     
     private enum Constants {
         static let dealIidentifier = "DealCell"
@@ -34,20 +22,14 @@ final class TransactionViewController: UIViewController {
         static let priceText = "Цене"
         static let amountText = "Объему"
         static let sideText = "Стороне"
+        static let ascendingText = "По возрастанию"
+        static let descendingText = "По убыванию"
+        static let fatalErrorText = "init(coder:) has not been implemented"
+        static let zeroValue = 0
+        static let oneValue = 1
     }
     
-    //    private enum FieldSorted {
-    //        case date
-    //        case instrument
-    //        case price
-    //        case amount
-    //        case side
-    //    }
-    //
-    //    private enum Order {
-    //        case ascending
-    //        case descending
-    //    }
+    // MARK: - Private Visual Components
     
     private let transactionTableView: UITableView = {
         let tableView = UITableView()
@@ -59,13 +41,15 @@ final class TransactionViewController: UIViewController {
         let button = UIButton()
         button.setImage(UIImage(systemName: Constants.ellipsisImageName), for: .normal)
         button.imageView?.tintColor = .black
+        button.setPreferredSymbolConfiguration(UIImage.SymbolConfiguration(font: UIFont(descriptor: UIFontDescriptor(),
+                                                                                        size: 20)), forImageIn: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
     
     private let ascendingButton: UIButton = {
         let button = UIButton()
-        button.setTitle("По возрастанию", for: .normal)
+        button.setTitle(Constants.ascendingText, for: .normal)
         button.setTitleColor(.black, for: .normal)
         button.tag = 0
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -74,14 +58,18 @@ final class TransactionViewController: UIViewController {
     
     private let descendingButton: UIButton = {
         let button = UIButton()
-        button.setTitle("По убыванию", for: .normal)
+        button.setTitle(Constants.descendingText, for: .normal)
         button.setTitleColor(.black, for: .normal)
         button.tag = 1
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
     
+    // MARK: - Private Properties
+    
     private var presenter: TransactionPresenterProtocol?
+    
+    // MARK: - Initializers
     
     init(presenter: TransactionPresenterProtocol) {
         self.presenter = presenter
@@ -89,14 +77,18 @@ final class TransactionViewController: UIViewController {
     }
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        fatalError(Constants.fatalErrorText)
     }
+    
+    // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
         presenter?.getServerData()
     }
+    
+    // MARK: - Private Methods
     
     private func setupUI() {
         createBarButtonItems()
@@ -154,7 +146,7 @@ final class TransactionViewController: UIViewController {
     
     @objc private func sortButtonAction(sender: UIButton) {
         
-        let sort = UIMenu(title: Constants.sortText, options: .singleSelection, children: [
+        let sortMenu = UIMenu(title: Constants.sortText, options: .singleSelection, children: [
             
             UIAction(title: Constants.dateText, handler: { _ in
                 self.presenter?.sortedTransaction(field: .date, order: .descending)
@@ -176,13 +168,14 @@ final class TransactionViewController: UIViewController {
                 self.presenter?.sortedTransaction(field: .side, order: .descending)
             })
         ])
-        sender.menu = sort
+        sender.menu = sortMenu
         sender.showsMenuAsPrimaryAction = true
     }
 }
 
+// MARK: - Расширение для обновления таблицы
+
 extension TransactionViewController: TransactionViewProtocol {
-    
     func reloadTableView() {
         DispatchQueue.main.async {
             self.transactionTableView.reloadData()
@@ -190,29 +183,36 @@ extension TransactionViewController: TransactionViewProtocol {
     }
 }
 
+
+// MARK: - UITableViewDataSource, UITableViewDelegate
+
 extension TransactionViewController: UITableViewDataSource, UITableViewDelegate {
     
-    //    func numberOfSections(in tableView: UITableView) -> Int {
-    //        return 1
-    //    }
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return Constants.oneValue
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        presenter?.model.count ?? 0
+        presenter?.model.count ?? Constants.zeroValue
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(
             withIdentifier: Constants.dealIidentifier,
-            for: indexPath) as? DealCell else { return UITableViewCell() }
-        cell.selectionStyle = .none
+            for: indexPath)
+                as? DealCell else { return UITableViewCell() }
+        
         guard let presenter else { return UITableViewCell() }
+        cell.selectionStyle = .none
         cell.configure(model: presenter.model[indexPath.row])
         return cell
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         guard let cell = tableView.dequeueReusableHeaderFooterView(
-            withIdentifier: Constants.headerIidentifier) as? HeaderCell else { return UIView() }
+            withIdentifier: Constants.headerIidentifier)
+                as? HeaderCell else { return UIView() }
+        
         cell.configure()
         return cell
     }

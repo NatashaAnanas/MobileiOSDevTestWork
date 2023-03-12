@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Протокол экрана со сделками
 protocol TransactionViewProtocol: AnyObject {
     func reloadTableView()
 }

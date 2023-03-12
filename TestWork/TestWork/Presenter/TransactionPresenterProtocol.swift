@@ -7,19 +7,7 @@
 
 import Foundation
 
-enum FieldSorted {
-   case date
-   case instrument
-   case price
-   case amount
-   case side
-}
-
-enum Order {
-   case ascending
-   case descending
-}
-
+/// Протокол презентера экрана со сделками
 protocol TransactionPresenterProtocol {
     var server: Server? { get set }
     var model: [Deal] { get set }

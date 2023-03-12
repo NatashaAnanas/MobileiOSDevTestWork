@@ -7,7 +7,10 @@
 
 import UIKit
 
+/// Хедер таблицы со сделками
 final class HeaderCell: UITableViewHeaderFooterView {
+    
+    // MARK: - Private Constants
     
     private enum Constants {
         static let instrumentText = "Instrument"
@@ -16,11 +19,12 @@ final class HeaderCell: UITableViewHeaderFooterView {
         static let sideText = "Side"
         static let fatalErrorText = "init(coder:) has not been implemented"
     }
-
+    
+    // MARK: - Private Visual Components
+    
     private let instrumentNameTitlLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 20)
-//        label.backgroundColor = .white
         label.contentMode = .center
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -30,7 +34,6 @@ final class HeaderCell: UITableViewHeaderFooterView {
     private let priceTitleLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 20)
-//        label.backgroundColor = .white
         label.contentMode = .center
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -40,7 +43,6 @@ final class HeaderCell: UITableViewHeaderFooterView {
     private let amountTitleLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 20)
-//        label.backgroundColor = .white
         label.contentMode = .center
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -50,19 +52,17 @@ final class HeaderCell: UITableViewHeaderFooterView {
     private let sideTitleLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 20)
-//        label.backgroundColor = .white
         label.contentMode = .center
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
+    // MARK: - Initializers
+    
     override init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
-        addSubview(instrumentNameTitlLabel)
-        addSubview(priceTitleLabel)
-        addSubview(amountTitleLabel)
-        addSubview(sideTitleLabel)
+        setupUI()
         setupConstraints()
     }
     
@@ -75,6 +75,13 @@ final class HeaderCell: UITableViewHeaderFooterView {
         priceTitleLabel.text = Constants.priceText
         amountTitleLabel.text = Constants.amountText
         sideTitleLabel.text = Constants.sideText
+    }
+    
+    private func setupUI() {
+        addSubview(instrumentNameTitlLabel)
+        addSubview(priceTitleLabel)
+        addSubview(amountTitleLabel)
+        addSubview(sideTitleLabel)
     }
     
     private func setupConstraints() {

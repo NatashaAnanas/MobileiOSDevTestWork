@@ -20,7 +20,8 @@
 		4185E22029BDE4D400835AF5 /* TransactionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4185E21F29BDE4D400835AF5 /* TransactionPresenter.swift */; };
 		4185E22229BDECDF00835AF5 /* TransactionPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4185E22129BDECDF00835AF5 /* TransactionPresenterProtocol.swift */; };
 		4185E22429BDEDC600835AF5 /* TransactionViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4185E22329BDEDC600835AF5 /* TransactionViewProtocol.swift */; };
-		4185E22629BDEE6000835AF5 /* Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4185E22529BDEE6000835AF5 /* Builder.swift */; };
+		4185E22629BDEE6000835AF5 /* TransactionAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4185E22529BDEE6000835AF5 /* TransactionAssembly.swift */; };
+		4185E22A29BE075F00835AF5 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4185E22929BE075F00835AF5 /* Helper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,7 +40,8 @@
 		4185E21F29BDE4D400835AF5 /* TransactionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionPresenter.swift; sourceTree = "<group>"; };
 		4185E22129BDECDF00835AF5 /* TransactionPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionPresenterProtocol.swift; sourceTree = "<group>"; };
 		4185E22329BDEDC600835AF5 /* TransactionViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionViewProtocol.swift; sourceTree = "<group>"; };
-		4185E22529BDEE6000835AF5 /* Builder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Builder.swift; sourceTree = "<group>"; };
+		4185E22529BDEE6000835AF5 /* TransactionAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionAssembly.swift; sourceTree = "<group>"; };
+		4185E22929BE075F00835AF5 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,7 +74,8 @@
 		417E759329B79EDE003F62A4 /* TestWork */ = {
 			isa = PBXGroup;
 			children = (
-				4185E22729BDEE6900835AF5 /* Builder */,
+				4185E22729BDEE6900835AF5 /* Assembly */,
+				4185E22829BE074F00835AF5 /* Helper */,
 				4185E21C29BD20E200835AF5 /* Server */,
 				4185E21B29BD20B100835AF5 /* Presenter */,
 				4185E21A29BD209400835AF5 /* View */,
@@ -131,12 +134,20 @@
 			path = Server;
 			sourceTree = "<group>";
 		};
-		4185E22729BDEE6900835AF5 /* Builder */ = {
+		4185E22729BDEE6900835AF5 /* Assembly */ = {
 			isa = PBXGroup;
 			children = (
-				4185E22529BDEE6000835AF5 /* Builder.swift */,
+				4185E22529BDEE6000835AF5 /* TransactionAssembly.swift */,
 			);
-			path = Builder;
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		4185E22829BE074F00835AF5 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				4185E22929BE075F00835AF5 /* Helper.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -213,7 +224,7 @@
 				417E75AD29B7A4F0003F62A4 /* DealCell.swift in Sources */,
 				417E759929B79EDE003F62A4 /* TransactionViewController.swift in Sources */,
 				417E759529B79EDE003F62A4 /* AppDelegate.swift in Sources */,
-				4185E22629BDEE6000835AF5 /* Builder.swift in Sources */,
+				4185E22629BDEE6000835AF5 /* TransactionAssembly.swift in Sources */,
 				4185E22029BDE4D400835AF5 /* TransactionPresenter.swift in Sources */,
 				417E75A929B7A319003F62A4 /* Server.swift in Sources */,
 				4185E22429BDEDC600835AF5 /* TransactionViewProtocol.swift in Sources */,
@@ -221,6 +232,7 @@
 				417E759729B79EDE003F62A4 /* SceneDelegate.swift in Sources */,
 				4185E21E29BD212400835AF5 /* Deal.swift in Sources */,
 				4185E22229BDECDF00835AF5 /* TransactionPresenterProtocol.swift in Sources */,
+				4185E22A29BE075F00835AF5 /* Helper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

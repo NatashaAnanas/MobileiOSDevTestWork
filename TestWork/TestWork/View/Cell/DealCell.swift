@@ -7,17 +7,25 @@
 
 import UIKit
 
+/// Ячейка с информацией о сделке
 final class DealCell: UITableViewCell {
+    
+    // MARK: - Private Constants
     
     private enum Constants {
         static let sideText = "side"
         static let buyText = "buy"
+        static let formatTwo = "%.2f"
+        static let formatZero = "%.0f"
+        static let dateFormat = "hh:mm:ss dd.MM.yyyy"
     }
+    
+    // MARK: - Private Visual Components
     
     private let instrumentNameLabel: UILabel = {
         let label = UILabel()
         label.backgroundColor = .white
-        label.font = .systemFont(ofSize: 20)
+        label.font = .systemFont(ofSize: 18)
         label.textAlignment = .left
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -34,6 +42,7 @@ final class DealCell: UITableViewCell {
     private let amountLabel: UILabel = {
         let label = UILabel()
         label.backgroundColor = .white
+        label.font = .systemFont(ofSize: 16)
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -42,6 +51,7 @@ final class DealCell: UITableViewCell {
     private let sideLabel: UILabel = {
         let label = UILabel()
         label.backgroundColor = .white
+        label.font = .systemFont(ofSize: 16)
         label.textAlignment = .right
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -50,23 +60,42 @@ final class DealCell: UITableViewCell {
     private let dateLabel: UILabel = {
         let label = UILabel()
         label.backgroundColor = .white
+        label.font = .systemFont(ofSize: 16)
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
+    // MARK: - Public Methods
+    
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        setupUI()
+        setupConstraints()
+    }
+    
     func configure(model: Deal) {
         instrumentNameLabel.text = model.instrumentName
-        priceLabel.text = String(format: "%.2f", model.price)
-        amountLabel.text =  String(format: "%.0f", model.amount)
+        priceLabel.text = String(format: Constants.formatTwo, model.price)
+        amountLabel.text =  String(format: Constants.formatZero, model.amount)
         createSide(side: model.side)
         dateLabel.text = getFormattedDate(date: model.dateModifier)
     }
     
-    func getFormattedDate(date: Date) -> String {
-            let dateformat = DateFormatter()
-            dateformat.dateFormat = "hh:mm:ss dd.MM.yyyy"
-            return dateformat.string(from: date)
+    // MARK: - Private Methods
+    
+    private func getFormattedDate(date: Date) -> String {
+        let dateformat = DateFormatter()
+        dateformat.dateFormat = Constants.dateFormat
+        return dateformat.string(from: date)
+    }
+    
+    private func setupUI() {
+        addSubview(instrumentNameLabel)
+        addSubview(priceLabel)
+        addSubview(amountLabel)
+        addSubview(sideLabel)
+        addSubview(dateLabel)
     }
     
     private func createSide(side: Deal.Side) {
@@ -93,7 +122,8 @@ final class DealCell: UITableViewCell {
     private func setupDateLabel() {
         NSLayoutConstraint.activate([
             dateLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            dateLabel.topAnchor.constraint(equalTo: topAnchor, constant: 10),        ])
+            dateLabel.topAnchor.constraint(equalTo: topAnchor, constant: 10)
+        ])
     }
     
     private func setupInstrumentNameLabel() {
@@ -127,15 +157,5 @@ final class DealCell: UITableViewCell {
             sideLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20),
             sideLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20)
         ])
-    }
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        addSubview(instrumentNameLabel)
-        addSubview(priceLabel)
-        addSubview(amountLabel)
-        addSubview(sideLabel)
-        addSubview(dateLabel)
-        setupConstraints()
     }
 }
